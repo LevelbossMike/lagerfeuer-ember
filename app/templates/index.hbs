@@ -12,5 +12,4 @@
     </span>
   </p>
 {{/each}}
-{{textarea placeholder='Say something' value=message}}
-<button {{action 'sendMessage'}}>Send it!</button>
+{{markdown-textfield value=message action='sendMessage'}}
