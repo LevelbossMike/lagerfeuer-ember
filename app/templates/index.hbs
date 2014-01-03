@@ -12,4 +12,5 @@
     </span>
   </p>
 {{/each}}
-{{input placeholder='Say something' value=message action='sendMessage'}}
+{{textarea placeholder='Say something' value=message}}
+<button {{action 'sendMessage'}}>Send it!</button>
