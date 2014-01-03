@@ -1,0 +1,15 @@
+<div>
+  Logged in as: {{user.name}}
+</div>
+</hr>
+{{#each}}
+  <p class='message'>
+    <span class='user_name'>
+      {{this.user_name}}:
+    </span>
+    <span class='message_body'>
+      {{this.body}}
+    </span>
+  </p>
+{{/each}}
+{{input placeholder='Say something' value=message action='sendMessage'}}
