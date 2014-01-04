@@ -30,6 +30,10 @@ export default Ember.ArrayController.extend({
         this.get('eb.model').send('chat.send_message', msg);
         this.set('message', '');
       }
+    },
+
+    editLastMessage: function() {
+      console.log('editing messages is not supported yet');
     }
   }
 });
