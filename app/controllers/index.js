@@ -1,4 +1,4 @@
-export default Ember.ArrayController.extend({
+export default Ember.ObjectController.extend({
   address: 'general',
 
   needs: ['event_bus', 'user'],
@@ -15,7 +15,7 @@ export default Ember.ArrayController.extend({
   }.on('init'),
 
   chatHandler: function(message) {
-    this.pushObject(Em.$.parseJSON(message));
+    this.messages.pushObject(Em.$.parseJSON(message));
   },
 
   actions: {
