@@ -1,6 +1,6 @@
 export default Ember.Route.extend({
   model: function() {
-    return ic.ajax('http://localhost:8080/channels/1.json')
+    return ic.ajax('http://localhost:8080/channels/1.json');
   },
 
   afterModel: function() {
