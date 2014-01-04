@@ -1,15 +1,25 @@
-<div>
-  Logged in as: {{user.name}}
+<div class='channel-info row'>
+  <div class='small-12 columns'>
+    <h4>
+      <small>#</small>stahlstadt.js
+    </h4>
+  </div>
 </div>
 </hr>
 {{#each}}
-  <p class='message'>
-    <span class='user_name'>
-      {{this.user_name}}:
-    </span>
-    <span class='message_body'>
-      {{markdown-text this.body}}
-    </span>
-  </p>
+  <div class='row message'>
+    <div class='small-2 medium-1 large-1 column user-avatar'>
+      <div class='th radius'>
+        <img src='http://lorempixel.com/50/50/people/3' alt='' />
+      </div>
+    </div>
+    <div class='small-10 medium-11 large-11 column message-details'>
+      <div class='row'>
+        <strong class='message-sender'>{{this.user_name}}</strong>
+        <small>8:54 am</small>
+        <div class='message-body'>{{markdown-text this.body}}</div>
+      </div>
+    </div>
+  </div>
 {{/each}}
 {{markdown-textfield value=message action='sendMessage'}}

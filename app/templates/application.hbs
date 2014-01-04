@@ -1,3 +1,26 @@
-<h2 id='title'>Welcome to Lagerfeuer</h2>
+<div class='off-canvas-wrap'>
+  <div class='inner-wrap'>
+    <div class='fixed'>
+      <nav class='top-bar' data-topbar>
+        <section class='left-small'>
+        <a class='left-off-canvas-toggle menu-icon'><span></span></a>
+        </section>
+      </nav>
+    </div>
+    <aside class='left-off-canvas-menu'>
+      <ul>
+        <li>
+          <a href=''>Item1</a>
+        </li>
+      </ul>
+    </aside>
 
-{{outlet}}
+    <section class='main-section'>
+      <div class='row'>
+        <div class='small-12 columns'>
+          {{outlet}}
+        </div>
+      </div>
+    </section>
+    <a href='' class='exit-off-canvas'></a>
+</div>
