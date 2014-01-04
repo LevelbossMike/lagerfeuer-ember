@@ -1,2 +1,17 @@
 @import "settings";
 @import "../vendor/foundation/css/foundation.min.css";
+
+.main-section {
+  margin-top: 60px; // because navbar is fixed and 45px high.
+}
+
+.message {
+  margin-top: 10px;
+}
+
+code {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 80%;
+  font-weight: lighter;
+}
