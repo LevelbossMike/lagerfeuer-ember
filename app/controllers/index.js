@@ -18,6 +18,13 @@ export default Ember.ObjectController.extend({
     this.messages.pushObject(Em.$.parseJSON(message));
   },
 
+  removeMessage: function(message) {
+    var messages        = this.get('messages');
+    var messageToRemove = messages.findBy('id', message.id);
+
+    messages.removeObject(messageToRemove);
+  },
+
   actions: {
     sendMessage: function() {
       var address   = this.get('address');
@@ -30,6 +37,11 @@ export default Ember.ObjectController.extend({
         this.get('eb.model').send('chat.send_message', msg);
         this.set('message', '');
       }
+    },
+
+    deleteMessage: function(message) {
+      var removeMessage = this.get('removeMessage').bind(this);
+      message.destroyRecord().then(removeMessage);
     },
 
     editLastMessage: function() {
