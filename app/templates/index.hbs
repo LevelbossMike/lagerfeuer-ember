@@ -6,21 +6,7 @@
   </div>
 </div>
 </hr>
-{{#each}}
-  <div class='row message'>
-    <div class='small-2 medium-1 large-1 column user-avatar'>
-      <div class='th radius'>
-        <img src='http://lorempixel.com/50/50/people/3' alt='' />
-      </div>
-    </div>
-    <div class='small-10 medium-11 large-11 column message-details'>
-      <div class='row'>
-        <strong class='message-sender'>{{this.user_name}}</strong>
-        <small>8:54 am</small>
-        <div class='message-body'>{{markdown-text this.body}}</div>
-      </div>
-    </div>
-  </div>
+{{#each messages}}
+  {{render 'message' this}}
 {{/each}}
-{{textarea placeholder='Say something' value=message}}
-<button {{action 'sendMessage'}}>Send it!</button>
+{{markdown-textfield value=message action='sendMessage' upArrowAction='editLastMessage'}}

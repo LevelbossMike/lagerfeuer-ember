@@ -1,0 +1,29 @@
+<div class='row message'>
+  <div class='small-2 medium-1 large-1 column user-avatar'>
+    <div class='th radius'>
+      <img src='http://lorempixel.com/50/50/people/3' alt='' />
+    </div>
+  </div>
+  {{#if editing}}
+    <div class='row'>
+      <div class='small-8 columns'>
+        {{markdown-textfield value=body action='persistEdit'}}
+      </div>
+      <div class='small-2 columns'>
+        <small {{action 'cancelEdit'}}>cancel</small>
+      </div>
+    </div>
+  {{else}}
+    <div class='small-9 medium-10 large-10 column message-details'>
+      <div class='row'>
+        <strong class='message-sender'>{{userName}}</strong>
+        <small>8:54 am</small>
+        <div class='message-body'>{{markdown-text body}}</div>
+      </div>
+    </div>
+    <div class='small-1 medium-1 large-1 column message-menu'>
+      <i {{action 'edit'}} class='fa fa-pencil'></i>
+      <i {{action 'delete'}} class="fa fa-times"></i>
+    </div>
+  {{/if}}
+</div>
