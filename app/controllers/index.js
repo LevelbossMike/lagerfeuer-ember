@@ -15,7 +15,7 @@ export default Ember.ObjectController.extend({
   }.on('init'),
 
   chatHandler: function(message) {
-    this.messages.pushObject(Em.$.parseJSON(message));
+    this.get('messages').pushObject(Em.$.parseJSON(message));
   },
 
   removeMessage: function(message) {

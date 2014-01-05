@@ -21,9 +21,9 @@ export default Ember.TextArea.extend({
 
   keyDown: function(event) {
     var insertedText   = this.get('value');
-    var upArrowPressed = event.keyCode == 38;
+    var upArrowPressed = event.keyCode === 38;
 
-    if ((insertedText == null || insertedText.length == 0) && upArrowPressed) {
+    if ((insertedText == null || insertedText.length === 0) && upArrowPressed) {
       this.sendAction('upArrowAction');
     }
   }
