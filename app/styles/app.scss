@@ -1,6 +1,10 @@
 @import "settings";
 @import "../vendor/foundation/css/foundation.min.css";
 
+$fa-font-path: '../vendor/font-awesome/fonts';
+@import "../vendor/font-awesome/scss/font-awesome.scss";
+
+
 .main-section {
   margin-top: 60px; // because navbar is fixed and 45px high.
 }

@@ -4,11 +4,15 @@
       <img src='http://lorempixel.com/50/50/people/3' alt='' />
     </div>
   </div>
-  <div class='small-10 medium-11 large-11 column message-details'>
+  <div class='small-9 medium-10 large-10 column message-details'>
     <div class='row'>
       <strong class='message-sender'>{{userName}}</strong>
       <small>8:54 am</small>
       <div class='message-body'>{{markdown-text body}}</div>
     </div>
+  </div>
+  <div class='small-1 medium-1 large-1 column message-menu'>
+    <i {{action 'edit'}} class='fa fa-pencil'></i>
+    <i {{action 'delete'}} class="fa fa-times"></i>
   </div>
 </div>
