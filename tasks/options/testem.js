@@ -4,24 +4,14 @@ module.exports = {
     options: {
       parallel: 2,
       framework: 'qunit',
-      src_files: [
-        'tmp/result/{app,tests}/**/*.{js,coffee,css}',
-        'tmp/result/index.html'
-      ],
-      serve_files: [
-        'vendor/loader.js',
-        'vendor/ember-resolver/dist/ember-resolver.js',
-        'vendor/jquery/jquery.js',
-        'vendor/handlebars/handlebars.js',
-        'vendor/ember/ember.js',
-        'vendor/ember-data/ember-data.js',
-        'vendor/ic-ajax/main.js',
-        'tmp/result/assets/templates.js',
-        'tmp/result/assets/app.js',
-        'tmp/transpiled/tests/**/*.js',
-        'tests/test_helper.js',
-        'tests/test_loader.js'
-      ],
+      port: (parseInt(process.env.PORT || 7358, 10) + 1),
+      test_page: 'tmp/result/tests/index.html',
+      routes: {
+        '/tests/tests.js': 'tmp/result/tests/tests.js',
+        '/assets/app.js': 'tmp/result/assets/app.js',
+        '/assets/templates.js': 'tmp/result/assets/templates.js',
+        '/assets/app.css': 'tmp/result/assets/app.css'
+      },
       launch_in_dev: ['PhantomJS', 'Chrome'],
       launch_in_ci: ['PhantomJS', 'Chrome'],
     }
@@ -30,24 +20,14 @@ module.exports = {
     options: {
       parallel: 8,
       framework: 'qunit',
-      src_files: [
-        'tmp/result/{app,tests}/**/*.{js,coffee,css}',
-        'tmp/result/index.html'
-      ],
-      serve_files: [
-        'vendor/loader.js',
-        'vendor/ember-resolver/dist/ember-resolver.js',
-        'vendor/jquery/jquery.js',
-        'vendor/handlebars/handlebars.js',
-        'vendor/ember/ember.js',
-        'vendor/ember-data/ember-data.js',
-        'vendor/ic-ajax/main.js',
-        'tmp/result/assets/templates.js',
-        'tmp/result/assets/app.js',
-        'tmp/transpiled/tests/**/*.js',
-        'tests/test_helper.js',
-        'tests/test_loader.js'
-      ],
+      port: (parseInt(process.env.PORT || 7358, 10) + 1),
+      test_page: 'tmp/result/tests/index.html',
+      routes: {
+        '/tests/tests.js': 'tmp/result/tests/tests.js',
+        '/assets/app.js': 'tmp/result/assets/app.js',
+        '/assets/templates.js': 'tmp/result/assets/templates.js',
+        '/assets/app.css': 'tmp/result/assets/app.css'
+      },
       launch_in_dev: ['PhantomJS',
                      'Chrome',
                      'ChromeCanary',
