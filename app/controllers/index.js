@@ -9,13 +9,13 @@ export default Ember.ObjectController.extend({
 
   connectChat: function() {
     var address = this.get('address');
-    var handler = this.get('chatHandler');
 
-    this.get('eb').queueHandler({address: 'chat.' + address, handler: handler.bind(this)});
+    this.get('eb').queueHandler({address: 'chat.' + address, handler: this.chatHandler.bind(this)});
   }.on('init'),
 
   chatHandler: function(message) {
-    this.get('messages').pushObject(Em.$.parseJSON(message));
+    var newMessage = this.store.push('message', message);
+    this.get('messages').pushObject(newMessage);
   },
 
   removeMessage: function(message) {
@@ -40,8 +40,7 @@ export default Ember.ObjectController.extend({
     },
 
     deleteMessage: function(message) {
-      var removeMessage = this.get('removeMessage').bind(this);
-      message.destroyRecord().then(removeMessage);
+      message.destroyRecord().then(this.removeMessage.bind(this));
     },
 
     editLastMessage: function() {

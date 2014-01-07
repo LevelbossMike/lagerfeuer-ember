@@ -15,9 +15,8 @@ export default Ember.ObjectController.extend({
 
     persistEdit: function() {
       var message    = this.get('model');
-      var cancelEdit = this.get('cancelEdit').bind(this);
 
-      message.save().then(cancelEdit);
+      message.save().then(this.cancelEdit.bind(this));
     },
 
     delete: function() {
