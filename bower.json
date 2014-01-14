@@ -13,7 +13,8 @@
     "marked": "~0.3.0",
     "highlightjs": "~7.5.0",
     "vertx": "http://dl.bintray.com/vertx/downloads/vert.x-2.1M2.zip",
-    "foundation": "~5.0.2"
+    "foundation": "~5.0.2",
+    "font-awesome": "~4.0.3"
   },
   "resolutions": {
     "ember": "~1.3.0-beta.4",
